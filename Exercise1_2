@@ -1,0 +1,28 @@
+/*
+
+Assigment 2. Write "Welcome to Java" 5 times. Make a Java Class Exercise1_2 that outputs
+"Welcome to Java" five time on five new lines.
+
+
+ */
+
+/**
+
+/**@input none
+   @logic prints out a string "Welcome to Java" five times on five new lines
+   @output: "Welcome to Java" five times
+   @date 1/22/2015
+   @author dcox9
+ */
+public class Exercise1_2 {
+
+    //main function that prints Hello World.
+
+    public static void main (String [] args) {
+
+        // print "Hello world with default System.out with prinln method. Uses \n as new line terminator. Prints "Hello World five times.
+
+        System.out.print ("Welcome to Java\n" + "Welcome to Java\n" + "Welcome to Java\n" + "Welcome to Java\n" + "Welcome to Java\n");
+    }
+
+}
