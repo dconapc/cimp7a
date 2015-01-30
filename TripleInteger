@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+/*
+Assigment 3. Input an integer, multiply the integer by 3, and then output the integer.
+
+   @input: input integer n between -2^20 to 2^20.
+   @logic: program multiplys the inputed integer by three.
+   @output: Output is the integer multiplyed by three with new line terminated. 
+   @date: 1/29/2015
+   @author: Daniel Cox
+ */
+
+public class TripleInteger {
+    
+    public static void main ( String [] args ) {
+        
+        //define a format input stream
+        Scanner in = new Scanner  ( System.in );
+        
+        //define integer to be read
+        int n;
+        
+        //read integer
+        n = in.nextInt ();
+        
+        //tiple the integer
+        int tripleN = 3*n;
+        
+        //output tripled integer newline terminated
+        System.out.println ("The number " + n + " tripled is " + tripleN);
+           
+        
+    }           
+    
+}
