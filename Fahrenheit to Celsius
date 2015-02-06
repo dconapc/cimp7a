@@ -1,0 +1,40 @@
+
+import java.util.Scanner;
+
+/*
+Assigment 5. Program reads in a temperature in fahrenheit and converts it to 
+celsius and prints out "Fahrenheit degree in Celsius in converted degree"
+
+
+@input: temperature in Fahrenheit.
+@logic: program takes degree in Fahrenheit and converts it to celcius.
+@output: Output is "Fahrenheit degree in Celsius is converted degree"
+@date: 2/5/2015
+@author: Daniel Cox
+*/
+public class Exercise2_1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        
+		// instansiate scanner object to input temperature from STD In
+        Scanner in = new Scanner (System.in);
+		
+        //Prompt user to enter temperature
+        System.out.print ( "Enter a temperature in Celsius: ");
+		
+        //declare variable  celsius and intitialize it with scanner input object. 
+        double celsius = in.nextDouble ();
+		
+        //convert celsius to fahrenheit. 
+        double fahrenheit = celsius * ( 9.0 / 5 ) + 32 ;
+		
+		//output the temperature converted to fahrenheit.
+        System.out.println ( "The temperature is " + fahrenheit + " in Fahrenheit.");
+        
+    }
+    
+}
