@@ -1,0 +1,49 @@
+import java.util.Scanner;
+/*
+Assigment 4. Program reads in two integers and outputs the sum, product, and 
+quotient. 
+
+
+@input: input two integers.
+@logic: program takes two integers and prints out the sum, product, and quotient.
+the output of the quotient must be cast into a double, otherwise it will possbily output
+a zero. Precision must be a float or double. 
+@output: Output is the sum, quotient and product of the two integers in that order. 
+In the form of "First Number +,*,divide Second Number = The Answer".
+@date: 2/5/2015
+@author: Daniel Cox
+*/
+
+
+public class P2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        
+        //initialize two variable to hold two numbers. 
+        int firstNumber, secondNumber;
+        
+        // instantiate scanner object to read in integers.
+         Scanner in = new Scanner ( System.in );
+         
+        // read in two integer from standard input        
+         firstNumber = in.nextInt();
+         secondNumber = in.nextInt();
+         
+		// Use System.out to ouput the inputted integer and sum, product, and quotient. 
+         
+         System.out.println ( firstNumber + " + " + secondNumber + " = " 
+                              + (firstNumber + secondNumber ));
+                              
+         System.out.println ( firstNumber + " / " + secondNumber + " = " 
+                              + (((double)firstNumber) / secondNumber ));    
+                              
+         System.out.println ( firstNumber + " * " + secondNumber + " = " 
+                              + ((firstNumber) * secondNumber ));
+        
+    }
+    
+}
