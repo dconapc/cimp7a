@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+/*
+Assigment 9: Program takes an initial value of $1000. Prompts user to enter
+term and rate of loan. Calculates the future value of the investment based on 
+the values entered by user. 
+
+*@input: Interest rate of investment and term of investment both stored as
+doubles.
+
+*@logic: Program uses values entered by user and the following equation to 
+calculate the final value of the investment:
+PV * Math.pow( (1.0+rate/1200.0), term ).
+
+*@output: Formantted out put of "An initial investment of $%.2f after %.0f 
+months at annual rate %.2f%% is $%.2f", PV, term, rate, fv ). Two decimals for 
+the Principle, no zeros for the term, two decimals for the interst rate and 
+final value respectively. 
+
+*@date: 2/12/2015
+*@author: Daniel Cox
+*/
+public class CertificateDeposit {
+
+    
+    
+    public static void main(String[] args) {
+        
+    //Declare constant double for principle value. 
+    final double PV = 1000.0;   
+    
+    Scanner in = new Scanner(System.in);
+    
+    System.out.print("Enter annual rate: ");   
+    double rate = in.nextDouble();
+    
+    System.out.print("Enter CD term in months: ");
+    double term = in.nextDouble();
+    
+    //calulate final value of investment
+    
+    /* note we have 12 months / year so we divide by 12
+         but an interestRate of 10% is the double 10/100
+         so we need to divide by 12*100 aka 1200  */
+        
+    double fv = PV * Math.pow( (1.0+rate/1200.0), term );
+    
+    /*fomatted output stream Two decimals for the Principle, no zeros for the 
+    term, two decimals for the interst rate and final value respectively. */
+    
+    System.out.printf( "An initial investment of $%.2f after %.0f months at annual rate of %.2f%% is $%.2f\n",
+                        PV, term, rate, fv );
+    
+    }
+    
+}
