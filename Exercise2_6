@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+
+/*
+Assigment 8: Program reads from standard input an integer between 0 and 1000.
+It then uses % 10 to find the last digit in the number. The last digit is stored
+in a variable. It then divides the input by 10 to strip the last digit of the 
+integer. It repeats the process using a while loop and adding each new 
+"Last Digit" to the next until there a no digits left or the input variable is
+equal to zero.
+
+*@input: An integer between 0 and 1000.
+*@logic: Program uses while loop. The last digit of the input is extracted and
+saved in a variable using mod operator. The number is divided by 10 to get rid
+of the last digit. The processs is repeated with while loop unitl the input is 
+equal to zero. The last digit of each interation of the loop is added to the
+next, giving the sum of the digits of the integer. 
+*@output: "The sum of all digits in X is N." Where X is the input integer and
+N is the sum of the digits of the integer. 
+*@date: 2/12/2015
+*@author: Daniel Cox
+*/
+public class Exercise2_6 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        //Create new instance of Scanner object.
+        Scanner in = new Scanner(System.in);
+        
+        //Promt user to enter integer between 0 and 1000.
+        System.out.print("Enter an integer between 0 and 1000: ");
+        
+        //program waits for user to enter integer
+        int x = in.nextInt();
+
+        //initialize/declare variable n to store the sum of the digits
+        int n = 0;
+        
+        //initialize/declare input as input to use in while loop
+        int input = x;
+        
+        /*While loop finds last digit of input. Stores/adds last digit in 
+        variable "n". Removes last digit. Repeats until input is zero. */
+        while (input != 0) {
+            int lastdigit = input % 10;
+            n += lastdigit;
+            input /= 10;
+        }
+
+        System.out.println("The sum of all digits in " + x + " is " + n);
+
+        // closing Scanner to prevent resource leak
+        in.close();
+        
+    }
+    
+}
