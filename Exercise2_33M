@@ -1,0 +1,49 @@
+/*
+Assigment 11: Program prompts user to input the weight and price for two
+packages. It then outputs which package has the better price.
+*@input: Four values, weight and price for package 1 and weight and price
+for package 2. 
+*@logic: Program compares the ratio of weight to price for the two packages.
+Then ouputs which has the better price or that they are equal.
+*@output: Outputs which package has the better price or if the two packages are
+of equal price, outputs that the two packages are of equal price. 
+*@date: 2/23/2015
+*@author: Daniel Cox
+*/
+
+import java.util.Scanner;
+
+public class Exercise3_33M {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+       
+       Scanner in = new Scanner(System.in);
+       
+       //prompt user to enter an integer.
+        System.out.print("Enter weight and price for package 1: ");
+        double w1 = in.nextDouble(); double p1 = in.nextDouble();
+        
+        System.out.print("Enter weight and price for package 2: ");
+        double w2 = in.nextDouble(); double p2 = in.nextDouble();
+        
+        //calculate price per pounds
+        double package1 = p1/w1;
+        double package2 = p2/w2;
+        
+        //compare the price per pound and output which has the better price
+        //or that they are of equal price. 
+        if (package2 > package1)
+            System.out.print("Package 1 has a better price.\n");
+        else if (package1 > package2)
+            System.out.print("Package 2 has a better price.\n");
+        else if (package1==package2)
+            System.out.print("Packages have the same price.\n"); 
+            
+        
+    }
+    
+}
