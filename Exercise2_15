@@ -1,0 +1,58 @@
+
+/*
+Assigment 11: Program prompts user to enter three points for a triangle. Then
+outputs the area of the triangle with a formatted output.
+*@input: Three x and y coordinates to form a triangle.
+*@logic: Program calculate the area of a triangle using the distance formula
+and Herons formula for calculating the area of a triangle with the length of the
+three sides of the tirangle. 
+*@output: Outputs the area of the triangle with a fomatted output using a
+floating integer with a percision of 2 decimal points. 
+
+*@date: 2/23/2015
+*@author: Daniel Cox
+*/
+
+import java.util.Scanner;
+/**
+ *
+ * @author dcox9
+ */
+public class Exercise2_15 {
+    
+    //Create static method for calulating the length of a side of a triangle
+    public static double distance( double x1, double y1, double x2, double y2 ) 
+	  { 
+      	return Math.sqrt( (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1) );
+      }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+     Scanner in = new Scanner(System.in);
+     
+    //prompt user to enter three x and y coordinates. Store variables as doubles
+    System.out.print("Enter three points for a triangle: ");
+    
+    double x1 = in.nextDouble(); double y1 = in.nextDouble();
+    double x2 = in.nextDouble(); double y2 = in.nextDouble();
+    double x3 = in.nextDouble(); double y3 = in.nextDouble();
+    
+    double side1 = distance( x1, y1, x2, y2 );
+    double side2 = distance( x2, y2, x3, y3 );
+    double side3 = distance( x3, y3, x1, y1 );
+    
+    //Use Herons formula for calculating the area of a triangle. 
+    double s = (side1 + side2+ side3)/2;       
+    double area = Math.sqrt(s*(s-side1)*(s-side2)*(s-side3));
+   
+    
+    //Output answer using formatted output. As floating point integer
+    //with precision of two decimals places.
+    System.out.printf("The area of the triangle is %,.2f\n", area);
+    
+    
+    }
+}
