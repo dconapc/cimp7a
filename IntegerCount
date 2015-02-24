@@ -1,0 +1,60 @@
+/*
+Assigment 13: Program prompts user for an integer. The program continue to 
+prompt the user for integers one at a time until the user enters a zero. The
+number of integers entered is ouput after the user enters zero.
+*@input: Any integer. If the user enters a zero, the program ends.
+*@logic: Program uses a while loop to repeat the task of prompting the user
+to enter an integer. When the user enters a zero the while loop evaluates to
+false and ends. A count variable adds one for each interation of the loop.
+*@output: The output of the program is the number of integers enter or the 
+value of the count variable which adds one for each iteration of the while loop.
+If the user enters zero for the firs integer the output is: 
+"No numbers were entered except 0\n".
+*@date: 2/23/2015
+*@author: Daniel Cox
+*/
+
+import java.util.Scanner;
+/**
+ *
+ * @author dcox9
+ */
+public class IntegerCount {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        Scanner in = new Scanner(System.in);
+        
+        //prompt user to enter integer
+        System.out.print("Enter an integer, the input ends if it is 0: ");
+        
+        int num = in.nextInt();
+        
+        //Check if the first integer entered is a zero.
+        if (num == 0)
+            System.out.print( "No numbers were entered except 0\n");
+        
+        //if first integer is not zero. start while loop.
+        else {
+            
+        int count = 0;         
+        
+        //While loop terminates when user enters a zero.
+        while (num!=0){
+            int integer = in.nextInt();
+            num = integer;
+                    
+            count++;   
+        }
+        
+        //The value of count is the number of iterations of the while loop
+        //or the number integers entered by the user.
+        System.out.print( "The number of integers is " + count + "\n");
+  
+        }
+    
+    }
+}
