@@ -1,0 +1,96 @@
+/*
+
+Assigment 14: Program prompts user for an integer. The program continue to
+prompt the user for integers one at a time until the user enters a zero. The
+program keeps track of the number of integers other than zero that are input. It
+keeps track of the number of positive integers, the number of negative integers,
+the total of the integers entered. And calculates the average of the integers
+input with a long variable type. 
+
+*@input: Any integer. If the user enters a zero, the program ends.
+
+*@logic: Program uses a while loop to repeat the task of prompting the user
+to enter an integer. When the user enters a zero the while loop evaluates to
+false and ends. A count variable adds one for each interation of the loop. An if
+else statement evaluated if the integer is positive or negative and count the 
+how many positive versus negative values are input. Then average is calculated 
+with a long varirable type. 
+
+*@output: The output of the program is the number of positive integers, the
+number of negative integers, the total of the integers entered. And the average
+of the integers with a long variable type. 
+
+"No numbers were entered except 0\n".
+*@date: 3/2/2015
+*@author: Daniel Cox
+*/
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author dcox9
+ */
+public class Exercise4_1M {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        Scanner in = new Scanner(System.in);
+        
+        //prompt user to enter integer
+        System.out.print("Enter an integer, the input ends if it is 0: ");
+        int num = in.nextInt();
+        
+        //Check if the first integer entered is a zero.
+        if (num == 0)
+        System.out.print( "No numbers were entered except 0\n");
+        
+        //if first integer is not zero. start while loop.
+        else {
+            
+            //intitialize counters and variable for total.
+            int count = 0;
+            double total = num;
+            int positiveInteger = 0;
+            int negativeInteger = 0;
+            
+            //check to see if first integer is positive or negative.
+            //update counter for positive or negative integer.
+            if (num > 0)
+                positiveInteger = 1;
+            
+            if (num < 0)
+                negativeInteger = 1;
+
+                //While loop terminates when user enters a zero.
+                while (num!=0){
+                int integer = in.nextInt();
+                
+                    num = integer;
+                    //sum the integers entered
+                    total = total + integer; 
+                        
+                        //update counter for positive or negative integers
+                        if (integer > 0)
+                        ++positiveInteger;
+                
+                        else if (integer <0)
+                        ++negativeInteger; 
+                        
+        //count iterations of loop                
+        count++;
+       }
+            
+        System.out.print( "The number of positives is " + positiveInteger + "\n");
+        System.out.print( "The number of negatives is " + negativeInteger + "\n");
+        System.out.printf( "The total is " + (long)total + "\n");
+        System.out.printf( "Average is %,.2f\n", total/count ); 
+           
+        }
+        
+    }
+    
+}
