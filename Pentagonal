@@ -1,0 +1,59 @@
+/*
+Assigment 15: Program prompts user to enter a integer. The program than
+calcualtes the pentagonal numbers for the numbers
+*@input: Any integer. 
+*@logic: Program uses a method to calculate and print the pentagonal numbers.
+An array is declared and a for loop intitializes the array with the pentagonal 
+numbers up to the number that is input by the user. The equation ((3*n*n)-n)/2
+is used to calulate the pentagonal number for each integer in the sequence of
+integers up to the integer enterd by the user.
+*@output: The output is pentagonal number in ascending order up the pentagonal
+number entered by the user. 
+*@date: 3/3/2015
+*@author: Daniel Cox
+*/
+
+import java.util.Scanner;
+/**
+ *
+ * @author dcox9
+ */
+public class Pentagonal {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       
+        
+        Scanner in = new Scanner(System.in);
+        
+        System.out.print("Enter an integer: ");
+        int n = in.nextInt();
+        
+        //call the method
+        getPentagonalNumber(n);
+
+    }
+        
+        public static int[] getPentagonalNumber(int n){
+            
+            //array variable declared
+            int [] array = new int[n];
+            
+           //inticuialize the array with pentafonal number. 
+            for (int i=1; i<n+1; i++) 
+                array[i-1] = ((3*i*i)-i)/2;
+            
+            //print the values of the array to the screen.
+            System.out.print("The pentagonal numbers are:");
+            for  (int k=0; k<array.length ; k++)
+                System.out.print(" " + array[k]);
+            
+            System.out.print("\n");
+            
+            return array;
+       
+        } 
+    
+}
