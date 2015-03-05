@@ -1,0 +1,76 @@
+/*
+Assigment 16: Program reads in ten numbers, calculated the mean and standard
+deviation, and then prints them out to standard output. 
+*@input: Ten integers.
+*@logic: Prgram reads ten numbers in and stores them in an array using a for
+loop. Then mean is calculated with a method dividing the sum of the numbers
+by the length of the array. The standard deviation is calculated with a method
+using a for loop to calculate the summing portion of the equation. The
+calculations are printed to the standard output with format specifier. 
+*@output: The output of the program is the mean of the ten numbers and the
+standard deviation0: "The mean is %,.2f\n", mean( data )\nThe standard deviation 
+is %,.2f\n", std(data, average)"
+*@date: 3/4/2015
+*@author: Daniel Cox
+*/
+
+package mean;
+
+import java.util.Scanner;
+
+
+public class Mean {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        //fixed number for the number of integers to evaluate
+        final int ARRAY_SIZE = 10;
+        //array with ten doubles
+        double[] data = new double [ ARRAY_SIZE ];
+        double mean;
+        int i; 
+        
+       Scanner in = new Scanner ( System.in );
+       //read in ten numbers. 
+       for (i=0; i < data.length; ++i )
+         data[ i ] = in.nextDouble();
+         
+         /*for (i=0; i < data.length ; ++i )
+             System.out.printf( "data [ %d ] =%,.2f\n", i, data[i]);*/
+         
+         double average = mean(data);
+         System.out.printf("The mean is %,.2f\n", mean( data ));
+         
+         System.out.printf("The standard deviation is %,.2f\n", std(data, average));
+      
+    }
+    //calculate the mean of the ten numbers. 
+    public static double mean ( double[] a ){
+        
+        double sum = a[0];
+        
+        for (int j=1; j<a.length; ++j)
+            sum+= a[j];
+        
+        return sum/a.length;
+        
+    }
+    //calculate the standard deviation. 
+    public static double std ( double[] a, double average){
+        
+        double s = 0.0;
+        
+        //calcuate the summed portion of equation
+        for (int i=0; i < a.length; ++i)
+            s+=( a[i]-average)*(a[i]-average);
+        
+        //return the standard deviation
+        return Math.sqrt(1.0/(a.length-1.0) * s);
+                
+        
+    }
+           
+    
+}
