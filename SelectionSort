@@ -1,0 +1,82 @@
+/*
+Assigment 17: Program takes an integer n. Then creates an array of the size.
+Next the program takes n number as doubles. The program then sorts the numbers
+in the array in descending order.
+
+*@input: First input size of array. Second input doubles for array.
+*@logic: Using nested for loops, the program selects the largest item in the 
+list. Then swaps it with list[i] if necessary.
+
+*@output: The output is the array input sorted in descending order. 
+
+*@date: 3/11/2015
+*@author: Daniel Cox
+*/
+
+package selectionsort;
+import java.util.Scanner;
+
+/**
+ *
+ * @author dcox9
+ */
+public class SelectionSort {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        
+        Scanner in = new Scanner(System.in);
+        
+        //get the size of the array
+        int arraySize = in.nextInt();
+        
+        //declare and initialize the array
+        double[] list = new double [ arraySize ];
+        
+        //get the numbers for the array
+        for (int i=0; i < list.length; ++i )
+            list[ i ] = in.nextDouble();
+        
+        //call selection sort method
+        selectionSort(list);
+        
+        //print sorted array in descending order
+        for (int j=0; j< list.length; j++) {
+            System.out.print(list[j]);
+              if (j < list.length-1)
+                System.out.print(" ");
+        }
+        
+        System.out.print("\n");
+    }
+    
+    //method to sort array
+    public static void selectionSort (double[] list){
+        double currentMax;
+        int currentMaxIndex;
+        int i;
+        
+        
+        for (i=0; i<list.length-1; i++ ){
+            currentMax = list[i];
+            currentMaxIndex = i;
+        
+            
+        for (int j=i+1; j<list.length; j++){
+        
+         if (currentMax < list[j]) {
+            currentMax = list[j];
+            currentMaxIndex = j;
+        }
+      }      
+        
+        if (currentMaxIndex != i){
+            list[currentMaxIndex] = list[i];
+            list[i] = currentMax;
+        } 
+     }
+  }
+}
